@@ -322,6 +322,7 @@
                     if (self.quadmetersbathroom >= 1) {
                         self.QuadMetersWithCanvasPrice = self.canvasPriceBathRoom * self.quadmetersbathroom
                         self.QuadMetersWithCanvasPrice += self.UpgradeWorkBathRoom()
+                        return self.QuadMetersWithCanvasPrice
                     }
                 }
             }
