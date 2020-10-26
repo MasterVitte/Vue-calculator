@@ -65,11 +65,11 @@
                         <!--Titles-->
                         <div class="col-12 slider-nav-title d-flex justify-content-center"
                              v-if="activeRoom === 'комната'">
-                            <p>Тип полотна: {{ chooseRoomCanvas }}</p>
+                            <p class="slider-type-name">Тип полотна: {{ chooseRoomCanvas }}</p>
                         </div>
                         <div class="col-12 slider-nav-title d-flex justify-content-center"
                              v-if="activeRoom === 'санузел'">
-                            <p>Тип помещения: {{ chooseRoomBathCanvas }}</p>
+                            <p class="slider-type-name">Тип помещения: {{ chooseRoomBathCanvas }}</p>
                         </div>
                         <!--end titles-->
                         <!--Slider-->
@@ -254,7 +254,6 @@
                     }
                 }
 
-
                 return upgrade
             },
             UpgradeWorkBathRoom() {
@@ -317,18 +316,14 @@
                         }
                         self.QuadMetersWithCanvasPrice += self.DefaultWork(self.quadmeters)
                         self.QuadMetersWithCanvasPrice += self.UpgradeWork(self.quadmeters)
-                        return self.QuadMetersWithCanvasPrice
                     }
-
                 } else if (self.activeRoom === 'санузел') {
                     self.QuadMetersWithCanvasPrice = 0
                     if (self.quadmetersbathroom >= 1) {
                         self.QuadMetersWithCanvasPrice = self.canvasPriceBathRoom * self.quadmetersbathroom
                         self.QuadMetersWithCanvasPrice += self.UpgradeWorkBathRoom()
-                        return self.QuadMetersWithCanvasPrice
                     }
                 }
-
             }
         }
     }
@@ -536,6 +531,10 @@
     .slider-nav-title {
         padding: 30px 0 10px 0;
         font-size: 1em;
+    }
+
+    .slider-type-name {
+      text-align: center;
     }
 
     .content-slider-nav {
